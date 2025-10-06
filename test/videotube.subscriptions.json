@@ -1,0 +1,360 @@
+[{
+  "_id": {
+    "$oid": "68e3fa2ac1f7f909b66733f9"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:19:38.635Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:19:38.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa4c69a2689a6212b3e9"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:20:12.332Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:20:12.332Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa4ef9c5d1d37c8318b9"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:20:14.271Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:20:14.271Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa506fc29116bc157686"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:20:16.053Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:20:16.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa52da91231a396a98c9"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:20:18.014Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:20:18.014Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa7ea027e8b3828e5bac"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:02.176Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:02.176Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa8741f5634db0de1f51"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "channel": {
+    "$oid": "68e216adfe8a2154bbb068dd"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:11.732Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:11.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa8a4fbd826d299a5fdc"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:14.242Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:14.242Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa8c6518d1d230dfbd06"
+  },
+  "subscriber": {
+    "$oid": "68e216adfe8a2154bbb068dd"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:16.601Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:16.601Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa8fccd3003820d7be7f"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:19.266Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:19.266Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa93c001356bd76cd258"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:23.446Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:23.446Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa993146b750a258ece0"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:29.973Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:29.973Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fa9d755632de1908575a"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216adfe8a2154bbb068dd"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:33.264Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:33.264Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3faabc9dda9b03f551399"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:47.342Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:47.342Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3faadfef74575cf517390"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:49.355Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:49.355Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3faafec3edc5a07c6691d"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:51.792Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:51.792Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fab131bc9ea34b32b52b"
+  },
+  "subscriber": {
+    "$oid": "68e216adfe8a2154bbb068dd"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:53.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:53.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fab3f9b28cdea8102fee"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:21:55.513Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:21:55.513Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3faba94f5ad65fb4c4ce9"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:22:02.857Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:22:02.857Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e3fabccd39d719aa8890c2"
+  },
+  "subscriber": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "channel": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "createdAt": {
+    "$date": "2025-10-06T17:22:04.828Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-06T17:22:04.828Z"
+  },
+  "__v": 0
+}]

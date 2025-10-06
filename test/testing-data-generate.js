@@ -2,12 +2,14 @@
         // 2 video, 5 tweets , 3 comment in the video , subscribed , 
 
 import { faker, vi } from "@faker-js/faker";
-import { User } from "./models/user.model.js";
+import { User } from "../src/models/user.model.js";
 
 import mongoose from "mongoose";
-import { Video } from "./models/video.model.js";
-import { Tweet } from "./models/tweet.model.js";
-import { Comment } from "./models/comment.model.js";
+import { Video } from "../src/models/video.model.js";
+import { Tweet } from "../src/models/tweet.model.js";
+import { Comment } from "../src/models/comment.model.js";
+import { Subscription } from "../src/models/subscription.model.js";
+import { Playlist } from "../src/models/playlist.model.js";
 const DB_NAME = "videotube";
 const MONGODB_URI = "mongodb://localhost:27017";
 
@@ -129,15 +131,36 @@ async function createCommentForUser(video,owner) {
   await Comment.create(options);
 }
 
-async function createPlaylistForUser(params) {
-  
+async function createPlaylistForUser(userId,video1,video2) {
+  const options = {
+    name: faker.animal.type(),
+    description: faker.string.alphanumeric(40),
+    videos: [video1,video2],
+    owner: userId
+  }
+  await Playlist.create(options);
+}
+
+function select2User(maxUser, minUser, userArray) {
+  const number1 = Math.floor(Math.random()*(maxUser-minUser+1))+minUser;
+  const number2 = Math.floor(Math.random()*(maxUser-minUser+1))+minUser;
+    if(number1==number2){
+      select2User(maxUser,minUser,userArray);
+    }else{
+      return {user1: userArray[number1],user2: userArray[number2]};
+    }
 }
 
 async function subscribedTo(subscriber,channel) {   // subscriber subscribedTo channel
-  
+  const options = {
+    subscriber: subscriber,
+    channel: channel
+  }
+
+  await Subscription.create(options);
 }
 
-async function createLike(userId,{video,comment,tweet}) {
+async function createLike(userId,thingId) {
   
 }
 
@@ -146,7 +169,10 @@ async function run() {
     await testConnectDB();
     await getAllUser();
     await getAllVideo();
-    await createCommentForUser(selectRandomUser(0,18,videoArray),selectRandomUser(0,6,userArray));
+    const {user1,user2} = select2User(0,6,videoArray);
+    console.log(user1._id);
+    console.log(user2._id);
+    await createPlaylistForUser(selectRandomUser(0,6,userArray),user1._id,user2._id);
   } catch (err) {
     console.error("Error:", err);
   } finally {

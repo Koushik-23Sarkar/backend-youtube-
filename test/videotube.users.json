@@ -1,0 +1,134 @@
+[{
+  "_id": {
+    "$oid": "68d63a7ea8244542395c5836"
+  },
+  "username": "koushik",
+  "email": "kous345345354hik@gmail.com",
+  "fullName": "koushik Sarkar",
+  "avatar": "http://res.cloudinary.com/duziacedd/image/upload/v1758870142/p1b7huuhag6ovveplqri.jpg",
+  "coverImage": "",
+  "watchHistory": [],
+  "password": "$2b$10$FswHgxWFT7w0VyKk.IqYgOTDmCxjVAwXFwAv8BC3wbBqdvSVtXMNW",
+  "createdAt": {
+    "$date": "2025-09-26T07:02:22.732Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-26T14:29:50.289Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OGQ2M2E3ZWE4MjQ0NTQyMzk1YzU4MzYiLCJpYXQiOjE3NTg4OTY5OTAsImV4cCI6MTc1OTc2MDk5MH0.CBz_co4iQRJ9el1vdnGWGP_2qlra3t4Cnq39HlSNvwI"
+},
+{
+  "_id": {
+    "$oid": "68e216adfe8a2154bbb068dd"
+  },
+  "username": "ilene11",
+  "email": "Fabiola55@hotmail.com",
+  "fullName": "Marcia Feil V",
+  "avatar": "https://res.cloudinary.com/demo/avater_0/upload/w_undefined,h_undefined,c_fill/UqXn6wo6s2AS.jpg",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_0/upload/w_undefined,h_undefined,c_fill/69lDle0UrMPl.png",
+  "watchHistory": [],
+  "password": "$2b$10$1jcz4WBuWM7wdwlQXgQUoOQy7B2NsnrZXexgAYk397EplsZBFZOnO",
+  "createdAt": {
+    "$date": "2025-10-05T06:56:45.933Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:56:45.933Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e216d24a7f019a8631d10d"
+  },
+  "username": "carrie_mcglynn31",
+  "email": "Abby.Borer@hotmail.com",
+  "fullName": "Vincent Lindgren",
+  "avatar": "https://res.cloudinary.com/demo/avater_0/upload/w_undefined,h_undefined,c_fill/gLejoTjMuL7C.png",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_0/upload/w_undefined,h_undefined,c_fill/UwZDarDPuJzk.png",
+  "watchHistory": [],
+  "password": "$2b$10$uw80qwbl/lPBcDPksI2q7uKnN6zFbLSoP2kv17Fibxb0dWFb3xaTK",
+  "createdAt": {
+    "$date": "2025-10-05T06:57:22.407Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:57:22.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e216d24a7f019a8631d112"
+  },
+  "username": "clint_jacobs",
+  "email": "Ottilie_Swift85@yahoo.com",
+  "fullName": "Patrick Carroll-Daniel",
+  "avatar": "https://res.cloudinary.com/demo/avater_1/upload/w_undefined,h_undefined,c_fill/bjJ6dkGkh2SZ.png",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_1/upload/w_undefined,h_undefined,c_fill/BdhuFBrzQsUY.jpg",
+  "watchHistory": [],
+  "password": "$2b$10$e1thiHdXnnnXfIPPJSOZM.lmNFWIMm8vXkMIfheCeXEkRRd56pnFy",
+  "createdAt": {
+    "$date": "2025-10-05T06:57:22.490Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:57:22.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e216d24a7f019a8631d114"
+  },
+  "username": "marilyne15",
+  "email": "Eugene77@hotmail.com",
+  "fullName": "Tabitha Sanford",
+  "avatar": "https://res.cloudinary.com/demo/avater_2/upload/w_undefined,h_undefined,c_fill/FxySiOSUpYOR.png",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_2/upload/w_undefined,h_undefined,c_fill/CtjW29UHTnTf.jpg",
+  "watchHistory": [],
+  "password": "$2b$10$NkKbiNYlhY47U9OUgoYMsu/hM3dnswggOJut/80.Y.HWeEKQvn0B6",
+  "createdAt": {
+    "$date": "2025-10-05T06:57:22.560Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:57:22.560Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e216d24a7f019a8631d116"
+  },
+  "username": "priscilla11",
+  "email": "Wilber_Heidenreich67@hotmail.com",
+  "fullName": "Miss Hope Nicolas MD",
+  "avatar": "https://res.cloudinary.com/demo/avater_3/upload/w_undefined,h_undefined,c_fill/rxdnkmwi0uBU.jpg",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_3/upload/w_undefined,h_undefined,c_fill/eSVAQNdszOgR.png",
+  "watchHistory": [],
+  "password": "$2b$10$RYrtiRGpIt1gsgwwe/Ik7umlkvvAjxQy8mOmOufl5tKTv4JFkru8y",
+  "createdAt": {
+    "$date": "2025-10-05T06:57:22.634Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:57:22.634Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68e216d24a7f019a8631d118"
+  },
+  "username": "jane32",
+  "email": "Myah65@hotmail.com",
+  "fullName": "Wayne Herman",
+  "avatar": "https://res.cloudinary.com/demo/avater_4/upload/w_undefined,h_undefined,c_fill/0x801EIWg0wA.png",
+  "coverImage": "https://res.cloudinary.com/demo/coverImage_4/upload/w_undefined,h_undefined,c_fill/qTvd145zxvIX.jpg",
+  "watchHistory": [],
+  "password": "$2b$10$qclZzQrywYXYCU6N/sFTcuv9OGC.s1le7Rj6DhxZzShBMnnz2FWYG",
+  "createdAt": {
+    "$date": "2025-10-05T06:57:22.703Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-05T06:57:22.703Z"
+  },
+  "__v": 0
+}]
