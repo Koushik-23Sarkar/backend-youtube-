@@ -8,9 +8,10 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 const getAllVideos = asyncHandler(async (req, res) => {
   const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query;
+  
   //TODO: get all videos based on query, sort, pagination
   console.log("Enter in the getAllVideos");
-  
+
   const option = {
     page: parseInt(page, 10),
     limit: parseInt(limit, 10),
@@ -22,7 +23,34 @@ const getAllVideos = asyncHandler(async (req, res) => {
       $match: {
         isPublished: true,
       },
-    },
+    }
+  ];
+
+
+  //  search by title or description
+  if (query) {
+    aggregate.push({
+      $match: {
+        $or: [
+          { title: { $regex: query, $options: "i" } },    // "i" --> case-insensitive
+          { description: { $regex: query, $options: "i" } },
+        ],
+      },
+    });
+  }
+
+  // filter by userId
+  if(userId) {
+    aggregate.push({
+      $match:{
+        owner: new mongoose.Types.ObjectId(userId)
+      }
+    })
+  }
+
+
+  // lookup owner info
+  aggregate.push(
     {
       $lookup: {
         from: "users",
@@ -46,8 +74,27 @@ const getAllVideos = asyncHandler(async (req, res) => {
           $first: "$owner",
         },
       },
-    },
-  ];
+    }
+  )
+
+
+
+  // multi - field sorting
+  if(sortBy && sortType){
+    const fields = sortBy.split(",");
+    const orders = sortType.split(",")
+
+    option.sort = {}
+    fields.forEach((field,index) => {
+      option.sort[field.trim()] = orders[index].toLowerCase() === "asc" ? 1 : -1;
+    });
+  }
+
+  console.log("getAllVideos: aggregate")
+  console.log(aggregate);
+  console.log("getAllVideos: option")
+  console.log(option);
+  
   const result = await Video.aggregatePaginate(aggregate, option);
 
   return res
@@ -219,10 +266,10 @@ const updateVideo = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
   const thumbnailLocalPath = req.file?.path;
 
-  if (!title & !thumbnailLocalPath & !description)
+  if (!title && !thumbnailLocalPath && !description)
     throw new ApiError(
       400,
-      "fields are missing (title or newThumbnail or description"
+      "fields are missing (title and newThumbnail and description"
     );
 
   let thumbnail;
@@ -231,23 +278,16 @@ const updateVideo = asyncHandler(async (req, res) => {
     if (!thumbnail) throw new ApiError(400, "Cloudiinary upload error");
   }
   //Update in the databsae
+  const updateData = {
+    ...(title && {title} ),
+    ...(description && {description} ),
+    ...(thumbnail && {thumbnail} )
+  }
+  console.log(updateData);
   const video = await Video.findByIdAndUpdate(
     videoId,
     {
-      $set: {
-        title,
-        description,
-        thumbnail: {
-          $cond: [
-            {
-              //Condition
-              $ifNull: [thumbnail, false],
-            },
-            thumbnail,
-            "$thumbnail",
-          ],
-        },
-      },
+      $set: updateData,
     },
     { new: true }
   );
@@ -270,6 +310,8 @@ const deleteVideo = asyncHandler(async (req, res) => {
 
   const video = await Video.findById(videoId);
   if (!video) throw new ApiError(400, "Video is not found!");
+
+  const userId  = req.user._id;
 
   if (video.owner.toString() !== userId?.toString())
     throw new ApiError(400, "Unathorized to delete that video");
@@ -296,7 +338,6 @@ const togglePublishStatus = asyncHandler(async (req, res) => {
   if (video.owner.toString() !== userId?.toString())
     throw new ApiError(400, "Unathorized to update publish status");
 
-  const isPublishedData = video.isPublished;
   const updatedVideo = await Video.findByIdAndUpdate(
     videoId,
     { $set: { isPublished: !video.isPublished } },
