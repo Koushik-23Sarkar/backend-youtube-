@@ -95,7 +95,7 @@ const getAllVideos = asyncHandler(async (req, res) => {
   console.log("getAllVideos: option")
   console.log(option);
   
-  const result = await Video.aggregatePaginate(aggregate, option);
+  const result = await Video.aggregatePaginate(Video.aggregate(aggregate), option);
 
   return res
     .status(200)
