@@ -62,7 +62,7 @@ const addComment = asyncHandler(async (req, res) => {
    *  create a field in the Comment table using above data.
    */
 
-  const commentContent = req.body;
+  const {commentContent} = req.body;
   if (!commentContent) throw new ApiError(400, "Enter comment content!");
 
   const { videoId } = req.params;
