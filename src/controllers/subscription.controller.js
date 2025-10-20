@@ -65,18 +65,18 @@ const getUserChannelSubscribers = asyncHandler(async (req, res) => {
 
 // controller to return channel list to which user has subscribed
 const getSubscribedChannels = asyncHandler(async (req, res) => {
-    const { subscriberId } = req.params
+    const { channelId } = req.params
     /**             LOGIC:
      *  find subscriber:subscriberId in the subscription table
      *  count number of field
      */
 
-    if(!subscriberId) throw new ApiError(400,"subscriberId is missing!")
+    if(!channelId) throw new ApiError(400,"subscriberId is missing!")
 
     const subscribedChannels = await Subscription.aggregate([
         {
             $match:{
-                subscriber: new mongoose.Types.ObjectId(subscriberId) 
+                subscriber: new mongoose.Types.ObjectId(channelId) 
             }
         },{
             $count: "numberOfSubscribedChannel"
