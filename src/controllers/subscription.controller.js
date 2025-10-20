@@ -41,22 +41,19 @@ const toggleSubscription = asyncHandler(async (req, res) => {
 
 // controller to return subscriber list of a channel
 const getUserChannelSubscribers = asyncHandler(async (req, res) => {
-    const {channelId} = req.params
+    const {subscriberId} = req.params
     /**             LOGIC:
      *  find channel:channelId  in the subscription table
      *  count number of fields
      */
 
-    if(!channelId) throw new ApiError(400,"channelId field is missing")
+    if(!subscriberId) throw new ApiError(400,"channelId field is missing")
 
     const subscribers = await Subscription.aggregate([
         {
             $match:{
-                channel : new mongoose.Types.ObjectId(channelId)
+                channel : new mongoose.Types.ObjectId(subscriberId)
             }
-        }, {
-
-            $count: "numberOfSubscribers"
         }
     ])
 
@@ -78,9 +75,10 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
             $match:{
                 subscriber: new mongoose.Types.ObjectId(channelId) 
             }
-        },{
-            $count: "numberOfSubscribedChannel"
-        }
+        },
+        // {
+        //     $count: "numberOfSubscribedChannel"
+        // }
     ])
 
     return res.status(200).json(new ApiResponse(200,subscribedChannels,"subscribedChannels fetched successfully"))
