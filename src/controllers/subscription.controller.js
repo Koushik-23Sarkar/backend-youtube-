@@ -15,7 +15,8 @@ const toggleSubscription = asyncHandler(async (req, res) => {
      */
 
     if(!channelId) throw new ApiError(400, "channelId field is missing")
-
+        console.log(channelId)
+        console.log(req.user)
     const alreadySubscribed = await Subscription.aggregate([
         {
             $match:{
@@ -24,8 +25,8 @@ const toggleSubscription = asyncHandler(async (req, res) => {
             }
         }
     ])
-
-    if(alreadySubscribed){
+    console.log("alreadySubscribed ", alreadySubscribed);
+    if(alreadySubscribed.length > 0){
         // delete that field
         await Subscription.findByIdAndDelete(alreadySubscribed[0]._id)
         return res.status(200).json(new ApiResponse(200,{},"unsubscribed successfully"))

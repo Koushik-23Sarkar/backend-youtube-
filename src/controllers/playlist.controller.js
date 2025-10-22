@@ -69,8 +69,8 @@ const addVideoToPlaylist = asyncHandler(async (req, res) => {
         },
         {new:true}
     );
-
-    return res.status(200).json(new ApiResponse(200,updatePlaylist,"playlist Update Successfully!"))
+    console.log(updatedPlaylist);
+    return res.status(200).json(new ApiResponse(200,updatedPlaylist,"playlist Update Successfully!"))
 
 })
 
@@ -91,7 +91,7 @@ const removeVideoFromPlaylist = asyncHandler(async (req, res) => {
 
 
 
-    return res.status(200).json(new ApiResponse(200,updatePlaylist,"Playlist Update Successfully"))
+    return res.status(200).json(new ApiResponse(200,updatedPlaylist,"Playlist Update Successfully"))
 })
 
 const deletePlaylist = asyncHandler(async (req, res) => {
