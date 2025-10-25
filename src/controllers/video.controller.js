@@ -8,7 +8,7 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 const getAllVideos = asyncHandler(async (req, res) => {
   const { page = 1, limit = 10, query, sortBy, sortType, userId } = req.query;
-  
+
   //TODO: get all videos based on query, sort, pagination
   console.log("Enter in the getAllVideos");
 
@@ -23,16 +23,15 @@ const getAllVideos = asyncHandler(async (req, res) => {
       $match: {
         isPublished: true,
       },
-    }
+    },
   ];
-
 
   //  search by title or description
   if (query) {
     aggregate.push({
       $match: {
         $or: [
-          { title: { $regex: query, $options: "i" } },    // "i" --> case-insensitive
+          { title: { $regex: query, $options: "i" } }, // "i" --> case-insensitive
           { description: { $regex: query, $options: "i" } },
         ],
       },
@@ -40,14 +39,13 @@ const getAllVideos = asyncHandler(async (req, res) => {
   }
 
   // filter by userId
-  if(userId) {
+  if (userId) {
     aggregate.push({
-      $match:{
-        owner: new mongoose.Types.ObjectId(userId)
-      }
-    })
+      $match: {
+        owner: new mongoose.Types.ObjectId(userId),
+      },
+    });
   }
-
 
   // lookup owner info
   aggregate.push(
@@ -75,27 +73,29 @@ const getAllVideos = asyncHandler(async (req, res) => {
         },
       },
     }
-  )
-
-
+  );
 
   // multi - field sorting
-  if(sortBy && sortType){
+  if (sortBy && sortType) {
     const fields = sortBy.split(",");
-    const orders = sortType.split(",")
+    const orders = sortType.split(",");
 
-    option.sort = {}
-    fields.forEach((field,index) => {
-      option.sort[field.trim()] = orders[index].toLowerCase() === "asc" ? 1 : -1;
+    option.sort = {};
+    fields.forEach((field, index) => {
+      option.sort[field.trim()] =
+        orders[index].toLowerCase() === "asc" ? 1 : -1;
     });
   }
 
-  console.log("getAllVideos: aggregate")
+  console.log("getAllVideos: aggregate");
   console.log(aggregate);
-  console.log("getAllVideos: option")
+  console.log("getAllVideos: option");
   console.log(option);
-  
-  const result = await Video.aggregatePaginate(Video.aggregate(aggregate), option);
+
+  const result = await Video.aggregatePaginate(
+    Video.aggregate(aggregate),
+    option
+  );
 
   return res
     .status(200)
@@ -249,6 +249,22 @@ const getVideoById = asyncHandler(async (req, res) => {
       },
     },
   ]);
+
+  let updatedWatchHistory = null;
+  if (findedVideo) {
+    updatedWatchHistory = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        $push: {
+          watchHistory: new mongoose.Types.ObjectId(videoId),
+        },
+      },
+      { new: true }
+    );
+
+    console.log(updatedWatchHistory)
+  }
+
   console.log(`getVideoById: ${findedVideo}`);
   return res
     .status(200)
@@ -279,10 +295,10 @@ const updateVideo = asyncHandler(async (req, res) => {
   }
   //Update in the databsae
   const updateData = {
-    ...(title && {title} ),
-    ...(description && {description} ),
-    ...(thumbnail && {thumbnail} )
-  }
+    ...(title && { title }),
+    ...(description && { description }),
+    ...(thumbnail && { thumbnail }),
+  };
   console.log(updateData);
   const video = await Video.findByIdAndUpdate(
     videoId,
@@ -311,7 +327,7 @@ const deleteVideo = asyncHandler(async (req, res) => {
   const video = await Video.findById(videoId);
   if (!video) throw new ApiError(400, "Video is not found!");
 
-  const userId  = req.user._id;
+  const userId = req.user._id;
 
   if (video.owner.toString() !== userId?.toString())
     throw new ApiError(400, "Unathorized to delete that video");
