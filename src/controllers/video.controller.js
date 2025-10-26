@@ -176,7 +176,7 @@ const getVideoById = asyncHandler(async (req, res) => {
   if (!videoId) throw new ApiError(400, "videoId field is missing!");
   await Video.updateOne(
     { _id: new mongoose.Types.ObjectId(videoId) },
-    { $inc: { views: 1 } },
+    { $inc: { views: 1 } }
   );
   const findedVideo = await Video.aggregate([
     {
@@ -337,7 +337,7 @@ const deleteVideo = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Unathorized to delete that video");
   const deletedVideo = await Video.findByIdAndDelete(videoId);
 
-  return new ApiResponse(200, deleteVideo, "video deleted Successfully");
+  return res.status(200).json(new ApiResponse(200, deleteVideo, "video deleted Successfully"));
 });
 
 const togglePublishStatus = asyncHandler(async (req, res) => {
