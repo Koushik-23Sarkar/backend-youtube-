@@ -123,6 +123,7 @@ const publishAVideo = asyncHandler(async (req, res) => {
     throw new ApiError(400, "All fields are required");
   }
 
+  console.log("req.files", req.files);
   const videoLocalPath = req.files?.videoFile[0]?.path;
   if (!videoLocalPath) {
     throw new ApiError(400, "video file is required");
@@ -173,7 +174,10 @@ const getVideoById = asyncHandler(async (req, res) => {
    */
   console.log("getVideoById controller");
   if (!videoId) throw new ApiError(400, "videoId field is missing!");
-
+  await Video.updateOne(
+    { _id: new mongoose.Types.ObjectId(videoId) },
+    { $inc: { views: 1 } },
+  );
   const findedVideo = await Video.aggregate([
     {
       //Find that video
@@ -262,7 +266,7 @@ const getVideoById = asyncHandler(async (req, res) => {
       { new: true }
     );
 
-    console.log(updatedWatchHistory)
+    console.log(updatedWatchHistory);
   }
 
   console.log(`getVideoById: ${findedVideo}`);
